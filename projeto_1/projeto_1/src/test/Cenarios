@@ -1,0 +1,13 @@
+#language: pt
+
+Funcionalidade: Simular investimento na Poupança de um associado
+
+  Cenario: Cadastrar formulário de simulação - RealizarCadastro
+    Dado o endereço da URL do Sicredi para realizar o cadastro de simulação
+    Quando realizar o cadastro com os valores corretamente
+    Então o sistema irá retornar os valores do cadastro da simulação apresentando os dados de retorno da simulação na tela.
+
+  Cenario: Preencher o formulário de simulação com valor menor que '20' - NãoRealizarCadastro
+    Dado o endereço da URL do Sicredi para realizar o cadastro de simulação
+    Quando realizar o cadastro informando o valor para aplicar de 10 reais e os demais campos do formulário
+    Então o sistema não realizará o simulação porque o valor mínimo para investir é de R$20,00.
